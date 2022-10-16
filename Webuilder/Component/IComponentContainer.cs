@@ -1,0 +1,17 @@
+﻿/* An interface describing the basic functionality of a component
+ * as a container of components
+ */
+
+namespace Webuilder.Component
+{
+    internal interface IComponentContainer<T> where T : IComponentContainer<T>
+    {
+        T[] Components { get; }
+
+        T GetComponent(string name);
+
+        void AddChild(T component);
+
+        void RemoveChild(T component);
+    }
+}
