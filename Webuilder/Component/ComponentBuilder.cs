@@ -1,7 +1,8 @@
 ﻿/* An abstract class that have base builder functionality
  * 
  * "ComponentBuilder<T> where T : ComponentBuilder<T>" 
- *      - provide returned T, where T is child class
+ *      - provide returned T, where T is child class, 
+ *      builder child class of component
  */
 
 using Webuilder.Helpers;
@@ -10,11 +11,11 @@ namespace Webuilder.Component
 {
     internal abstract class ComponentBuilder<T> where T : ComponentBuilder<T>
     {
-        private string _name;
+        private string? _name;
 
-        private string _clas;
+        private string? _clas;
 
-        private string _id;
+        private string? _id;
 
         private int _width = 0;
 
