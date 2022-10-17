@@ -6,6 +6,8 @@ namespace Webuilder.Component
 {
     internal interface IComponentContainer<T> where T : IComponentContainer<T>
     {
+        T Parent { get; }
+
         T[] Components { get; }
 
         T GetComponent(string name);
