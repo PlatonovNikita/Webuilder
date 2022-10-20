@@ -3,7 +3,7 @@
 
 namespace Webuilder.Component
 {
-    internal abstract class ComponentConteiner : IComponentContainer<IComponent>
+    public abstract class ComponentConteiner : IComponentContainer<IComponent>
     {
         private protected IComponent _parent;
 
