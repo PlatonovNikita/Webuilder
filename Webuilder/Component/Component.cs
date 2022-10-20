@@ -4,17 +4,17 @@
 
 namespace Webuilder.Component
 {
-    internal abstract class Component : ComponentConteiner, IComponent
+    public abstract class Component : ComponentConteiner, IComponent
     {
-        private string _name;
+        private protected string _name;
 
-        private string _clas;
+        private protected string _clas;
 
-        private string _id;
+        private protected string _id;
 
-        private int _width;
+        private protected int _width;
 
-        private int _grid;
+        private protected int _grid;
 
         public virtual string Name => _name;
 
@@ -28,7 +28,7 @@ namespace Webuilder.Component
 
         public abstract string Rander();
 
-        protected Component(string name, string clas, string id, int width, int grid)
+        private protected Component(string name, string clas, string id, int width, int grid)
         {
             _name = name;
             _clas = clas;
