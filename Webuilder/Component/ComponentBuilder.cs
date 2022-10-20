@@ -64,5 +64,14 @@ namespace Webuilder.Component
             _width = width;
             return this as T;
         }
+
+        private protected virtual void CheckDefauldComponentFields()
+        {
+            ComponentErrorHelper.CheckForNull(_name, nameof(_name));
+            ComponentErrorHelper.CheckForNull(_id, nameof(_id));
+            ComponentErrorHelper.CheckForNull(_clas, nameof(_clas));
+            ComponentErrorHelper.CheckGrid(_grid);
+            ComponentErrorHelper.CheckWidth(_width, _grid);
+        }
     }
 }
