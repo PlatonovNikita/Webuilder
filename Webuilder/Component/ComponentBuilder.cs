@@ -15,7 +15,7 @@ namespace Webuilder.Component
 
         private protected string? _clas;
 
-        private protected string? _id;
+        private protected string? _localId;
 
         private protected int _width = 0;
 
@@ -41,13 +41,13 @@ namespace Webuilder.Component
             return this as T;
         }
 
-        public virtual T WithId(string id)
+        public virtual T WithLocalId(string localId)
         {
-            if (string.IsNullOrWhiteSpace(id))
+            if (string.IsNullOrWhiteSpace(localId))
             {
-                throw new ArgumentNullException(nameof(id));
+                throw new ArgumentNullException(nameof(localId));
             }
-            _id = id;
+            _localId = localId;
             return this as T;
         }
 
@@ -68,7 +68,7 @@ namespace Webuilder.Component
         private protected virtual void CheckDefauldComponentFields()
         {
             ComponentErrorHelper.CheckForNull(_name, nameof(_name));
-            ComponentErrorHelper.CheckForNull(_id, nameof(_id));
+            ComponentErrorHelper.CheckForNull(_localId, nameof(_localId));
             ComponentErrorHelper.CheckForNull(_clas, nameof(_clas));
             ComponentErrorHelper.CheckGrid(_grid);
             ComponentErrorHelper.CheckWidth(_width, _grid);
