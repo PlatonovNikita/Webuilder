@@ -9,17 +9,17 @@ using Webuilder.Helpers;
 
 namespace Webuilder.Component
 {
-    internal abstract class ComponentBuilder<T> where T : ComponentBuilder<T>
+    public abstract class ComponentBuilder<T> where T : ComponentBuilder<T>
     {
-        private string? _name;
+        private protected string? _name;
 
-        private string? _clas;
+        private protected string? _clas;
 
-        private string? _id;
+        private protected string? _id;
 
-        private int _width = 0;
+        private protected int _width = 0;
 
-        private int _grid = 0;
+        private protected int _grid = 0;
 
         public virtual T WithName(string name)
         {
