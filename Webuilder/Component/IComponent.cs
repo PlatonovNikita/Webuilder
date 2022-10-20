@@ -5,11 +5,13 @@ namespace Webuilder.Component
 {
     internal interface IComponent : IComponentContainer<IComponent>
     {
+        //GUID Id { get; }
+        
         string Name { get; }
 
         string Class { get; }
 
-        string Id { get; }
+        string LocalId { get; }
 
         int Width { get; }
 
