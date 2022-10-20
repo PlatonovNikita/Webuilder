@@ -5,23 +5,37 @@ namespace Webuilder.Component
 {
     internal abstract class ComponentConteiner : IComponentContainer<IComponent>
     {
-        public virtual IComponent Parent => throw new NotImplementedException();
+        private protected IComponent _parent;
 
-        public virtual IComponent[] Components => throw new NotImplementedException();
+        private protected List<IComponent> _components = new List<IComponent>();
+
+        public virtual IComponent Parent => _parent;
+
+        public virtual IComponent[] Components => _components.ToArray();
 
         public virtual void AddChild(IComponent component)
         {
-            throw new NotImplementedException();
+            if (component == null)
+            {
+                throw new ArgumentNullException(nameof(component));
+            }
+
+            _components.Add(component);
+        }
+
+        public virtual void AddCildren(IComponent[] components)
+        {
+            _components.AddRange(components);
         }
 
         public virtual IComponent GetComponent(string name)
         {
-            throw new NotImplementedException();
+            return _components.First(x => x.Name == name);
         }
 
         public virtual void RemoveChild(IComponent component)
         {
-            throw new NotImplementedException();
+            _components.Remove(component);
         }
     }
 }
