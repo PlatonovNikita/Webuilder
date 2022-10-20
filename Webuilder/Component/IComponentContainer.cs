@@ -4,7 +4,7 @@
 
 namespace Webuilder.Component
 {
-    internal interface IComponentContainer<T> where T : IComponentContainer<T>
+    public interface IComponentContainer<T> where T : IComponentContainer<T>
     {
         T Parent { get; }
 
