@@ -3,7 +3,7 @@
 
 namespace Webuilder.Component
 {
-    internal interface IComponent : IComponentContainer<IComponent>
+    public interface IComponent : IComponentContainer<IComponent>
     {
         //GUID Id { get; }
         
