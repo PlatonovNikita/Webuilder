@@ -24,6 +24,14 @@ namespace Webuilder.Helpers
                             $"Value of width component out of range ({LOVER_GRID_OR_WIDTH}, grid = {UPPER_GRID})!");
         }
 
+        static public void CheckForNull(object item, string itemName)
+        {
+            if (item == null)
+            {
+                throw new ArgumentNullException(itemName);
+            }
+        }
+
         static void CheckOutOfRange(int value, int lower, int upper, string massage)
         {
             if (value < lower || value > upper)
