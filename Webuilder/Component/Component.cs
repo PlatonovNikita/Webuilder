@@ -8,9 +8,9 @@ namespace Webuilder.Component
     {
         private protected string _name;
 
-        private protected string _clas;
+        private protected string _className;
 
-        private protected string _id;
+        private protected string _localId;
 
         private protected int _width;
 
@@ -18,9 +18,9 @@ namespace Webuilder.Component
 
         public virtual string Name => _name;
 
-        public virtual string Class => _clas;
+        public virtual string Class => _className;
 
-        public virtual string Id => _id;
+        public virtual string LocalId => _localId;
 
         public virtual int Width => _width;
 
@@ -28,11 +28,11 @@ namespace Webuilder.Component
 
         public abstract string Rander();
 
-        private protected Component(string name, string clas, string id, int width, int grid)
+        private protected Component(string name, string className, string localId, int width, int grid)
         {
             _name = name;
-            _clas = clas;
-            _id = id;
+            _className = className;
+            _localId = localId;
             _width = width;
             _grid = grid;
         } 
