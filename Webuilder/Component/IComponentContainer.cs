@@ -14,6 +14,8 @@ namespace Webuilder.Component
 
         void AddChild(T component);
 
+        void AddCildren(T[] components);
+
         void RemoveChild(T component);
     }
 }
